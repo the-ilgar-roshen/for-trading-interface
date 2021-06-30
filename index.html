@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'">
+    <meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; script-src 'self'">
+    <title>Binance Trade Interface</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <h1>Hello World!</h1><span id="electron-version"></span>
+
+    <div class="info_box">
+        <label for="symbol_code">Pick SYMBOL</label>
+        <input type="text" name="symbol_code" id="symbol_code" placeholder="BTCUSDT">
+        <input type="text" name="amount_in_usdt_to_spend" id="amount_in_usdt_to_spend" placeholder="11">
+
+        <div class="symbol_price" id="symbol_price">0</div>
+        <div class="to_buy_sell_costs" id="to_buy_sell_costs">0</div>
+        
+        <button id="watch_symbol" class="watch_symbol">Watch SYMBOL</button>
+        <button id="unwatch_symbol" class="unwatch_symbol">Unwatch SYMBOL</button>
+    </div>
+    
+    <div class="action">
+        <label for="profit">Profit</label>
+        <input type="text" name="profit" id="profit" placeholder="0.2 cents">
+        
+        <button id="buylong" class="buysell">BUY/long</button>
+        <button id="sellshort" class="buysell">SELL/short</button>
+    </div>
+    
+    <!-- You can also require other files to run in this process -->
+    <script src="./renderer.js"></script>
+  </body>
+</html>
